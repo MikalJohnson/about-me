@@ -1,4 +1,6 @@
-//alert("Lets see how well you know me! O_O")
+'use strict'
+
+alert("Lets see how well you know me! O_O")
 
 
 function nameSpell() {
@@ -111,11 +113,49 @@ function favoriteNumber() {
     }
   }
 }
+
+function favoriteGames(){
+
+  let top10Games = ["Dark Souls",
+  "Apex Legends",
+  "Call of Duty Modern Warfare",
+  "Legend of Zelda OoT",
+  "Metroid Prime 2 Echoes",
+  "Halo Series",
+  "Super Smash Bros",
+  "Insurgency",
+  "Legend of Dragoon",
+  "Fortnite"];
+
+
+  let score = 0;
+  let chances = 6;
+  let input = 'start';
+  let correct = false;
+
+  for (let i = 0; i < chances; i++) {
+    console.log(`the user has ${chances - i - 1} chances remaining`);
+    if (correct === true) {
+      break;
+    }
+    input = prompt(`Guess my favorite games. You will have 6 chances.`)
+
+    for (let j = 0; j < top10Games.length; j++){
+      console.log(top10Games[j]);
+      if (top10Games[j] === input) {
+        console.log('You are correct!')
+        score ++;
+        correct = true;
+        break;
+      }
+    }
+  }
+}
+
 nameSpell();
 militaryVet();
 medicalField();
 bornWhere();
 codingDojo();
 favoriteNumber();
-
-// added new changes
+favoriteGames();
